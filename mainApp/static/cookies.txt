@@ -1,0 +1,7 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+setsail.qodeinteractive.com	TRUE	/	FALSE	1999999999	PHPSESSID	549eb7b01617329f7b9158b9e8d9466f
+setsail.qodeinteractive.com	TRUE	/	FALSE	1999999999	woocommerce_items_in_cart	1
+setsail.qodeinteractive.com	TRUE	/	FALSE	1999999999	wp_woocommerce_session_516726baa58ffffcf9a53c54d1f0090d	t_710e2396be9f98d335c3bac05b4cca%7C%7C1709364274%7C%7C1709360674%7C%7Ccc5918bf5c4f366286631e5f55b6b5e2
+setsail.qodeinteractive.com	TRUE	/	FALSE	1999999999	woocommerce_cart_hash	04e611196170bb6537af9f8f0009e850
+
