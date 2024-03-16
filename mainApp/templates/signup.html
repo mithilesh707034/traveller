@@ -1,0 +1,119 @@
+{% extends "home.html" %}
+{%block body%}
+<script>
+    function validateForm() {
+        var username = document.getElementById("email").value;
+
+        // Extract usernames from the 'unames' object
+        var existingUsernames = [];
+        {% for item in uname %}
+        existingUsernames.push('{{ item.username }}');
+        {% endfor %}
+
+        // Check if the entered username already exists in the 'existingUsernames' array
+        if (existingUsernames.includes(username)) {
+            alert("Username already taken.");
+            return false; // Prevent form submission
+        }
+
+        // Add additional validation logic here if needed
+
+        return true; // Allow form submission if all validations pass
+    }
+
+
+</script>
+<style>
+    /* Style for the pop-up container */
+    .popup-container {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #021F41;
+        color:white;
+        padding: 20px;
+        border: 2px solid #ccc;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        width:500px;
+    }
+
+    /* Style for the alert message */
+    .alert-message {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    /* Style for the OK button */
+    .ok-button {
+        padding: 10px 20px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    /* Hover effect for the OK button */
+    .ok-button:hover {
+        background-color: #45a049;
+    }
+</style>
+
+{% if msg %}
+<div class="popup-container">
+<div class="alert-message">
+Your have been Registered successfully!
+</div>
+<button class="ok-button" onclick="closePopup()">OK</button>
+</div>
+{% endif %}
+
+<script>
+// Function to close the pop-up
+function closePopup() {
+// Remove the pop-up container from the DOM
+document.querySelector('.popup-container').remove();
+window.open("/login", "_self");
+}
+</script>
+<div class="container-fluid w-100 ">
+    <div style="width:400px;margin:auto;background-color:black;padding:30px;border-radius:20px;">
+        <form method="post" onsubmit="return validateForm();"class="form-control">
+           {%csrf_token%}
+            <div>
+               <h6>Name</h6>
+               <input type="text" name="name" placeholder="Your Name" required class="form-control">
+            </div>
+            <div>
+               <h6>Phone</h6>
+               <input type="number" name="phone"min="5000000000"max="9999999999" placeholder="Your Phone" required class="form-control">
+            </div>
+            
+            <div>
+                <h6>Email</h6>
+                <input type="email" name="email" placeholder="Your Email" required class="form-control"  id="email">
+            </div>
+            
+            <div>
+                <h6>Password</h6>
+                <input type="password" name="password" placeholder="Your Password" required class="form-control">
+            </div>
+            <div>
+                <h6>Address</h6>
+                <input type="text" name="address" placeholder="Your Address" required class="form-control">
+             </div>
+            <div class="mt-4">
+                <ul>
+                    <li>
+                        <button type="submit" class="btn btn-primary">Signup </button>
+                    </li> 
+                    <span style="float:right;margin-top:-30px;"> <a href="/login">Login </a></span>
+                </ul>
+            </div>
+        </form>
+    </div>
+</div>
+{%endblock%}

@@ -1,0 +1,102 @@
+{%extends 'home.html'%}
+{%load static%}
+{%block body%}
+
+
+<!-- Checkout Section Start -->
+<div class="section section-padding">
+    <div class="container">
+
+        <div class="login-register-form ">
+            <form action="/order/" method="post" class="form-control">
+                {%csrf_token%}
+                <div class="row">
+                    <div class="col-6">
+                        <div class="section-title2">
+                            <h2 class="title">Billing details</h2>
+                        </div>
+                        <div class="row learts-mb-n50">
+                            <div class="col-12 learts-mb-20">
+                                <label for="billing_Name">Full Name <abbr class="required">*</abbr></label>
+                                <input type="text" id="registerEmail" name="billing_Name" required
+                                    placeholder="Enter Name" class="form-control">
+                            </div>
+                            <div class="col-12 learts-mb-20">
+                                <label for="billing_Phone">Phone <abbr class="required">*</abbr></label>
+                                <input type="text" id="registerEmail" name="billing_Phone" required
+                                    placeholder="Enter Phone" class="form-control">
+                            </div>
+                            <div class="col-12 learts-mb-20">
+                                <label for="registerEmail">Address <abbr class="required">*</abbr></label>
+                                <input type="text" id="registerEmail" name="billing_Address" required
+                                    placeholder="Enter Address"class="form-control">
+                            </div>
+                            <div class="col-12 learts-mb-20">
+                                <label for="registerEmail">PIN Code<abbr class="required">*</abbr></label>
+                                <input type="text" id="registerEmail" name="billing_PIN" required
+                                    placeholder="Enter PIN"class="form-control">
+                            </div>
+
+                            <div class="col-12 learts-mb-20">
+                                <label for="password">City <abbr class="required">*</abbr></label>
+                                <input type="text" id="registerEmail" name="billing_City" required
+                                    placeholder="Enter City"class="form-control">
+                            </div>
+                            <div class="col-12 learts-mb-20">
+                                <label for="cpassword">State<abbr class="required">*</abbr></label>
+                                <input type="text" id="registerEmail" name="billing_State" required
+                                    placeholder="Enter State"class="form-control">
+                            </div>
+
+
+
+                        </div>
+
+                    </div>
+                    <div class="col-6">
+                        <div class="section-title2">
+                            <h2 class="title">Shipping details</h2>
+                        </div>
+                        <div class="row learts-mb-n50">
+                            <div class="col-12 learts-mb-20">
+                                <label for="name">Full Name <abbr class="required">*</abbr></label>
+                                <input type="text" id="registerEmail" name="shipping_Name" required
+                                    placeholder="Enter Name"class="form-control">
+                            </div>
+                            <div class="col-12 learts-mb-20">
+                                <label for="username">Phone <abbr class="required">*</abbr></label>
+                                <input type="text" id="registerEmail" name="shipping_Phone" required
+                                    placeholder="Enter Phone"class="form-control">
+                            </div>
+                            <div class="col-12 learts-mb-20">
+                                <label for="registerEmail">Address <abbr class="required">*</abbr></label>
+                                <input type="text" id="registerEmail" name="shipping_Address" required
+                                    placeholder="Enter Address"class="form-control">
+                            </div>
+                            <div class="col-12 learts-mb-20">
+                                <label for="registerEmail">PIN Code<abbr class="required">*</abbr></label>
+                                <input type="text" id="registerEmail" name="shipping_PIN" required
+                                    placeholder="Enter PIN"class="form-control">
+                            </div>
+
+                            <div class="col-12 learts-mb-20">
+                                <label for="password">City <abbr class="required">*</abbr></label>
+                                <input type="text" id="registerEmail" name="shipping_City" required
+                                    placeholder="Enter City"class="form-control">
+                            </div>
+                            <div class="col-12 learts-mb-20">
+                                <label for="cpassword">State<abbr class="required">*</abbr></label>
+                                <input type="text" id="registerEmail" name="shipping_State" required
+                                    placeholder="Enter State"class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                    <input type="submit" value="Buy Now" class="btn btn-primary mt-3">
+                    </div>
+                </div>
+                <!-- Message Sction  -->
+            </form>
+        </div>
+        <!-- Checkout Section End -->
+        {%endblock%}

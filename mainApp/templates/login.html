@@ -1,0 +1,28 @@
+{% extends "home.html" %}
+{%block body%}
+<div class="container-fluid w-100 text-center">
+    <div style="width:400px;margin:auto;background-color:black;padding:30px;border-radius:20px;">
+        <form method="post" >
+           {%csrf_token%}
+            <div>
+                <h6>Email</h6>
+                <input type="email" name="email" placeholder="Your Email" required class="form-control">
+            </div>
+            
+            <div>
+                <h6>Password</h6>
+                <input type="password" name="password" placeholder="Your Password" required class="form-control">
+            </div>
+            
+            <div class="mt-4">
+                <ul>
+                    <li>
+                        <button type="submit" class="btn btn-primary">Login </button>
+                    </li> 
+                    <span style="float:right;margin-top:-30px;"> <a href="/signup">Signup </a></span>
+                </ul>
+            </div>
+        </form>
+    </div>
+</div>
+{%endblock%}

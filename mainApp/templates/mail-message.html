@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Invoice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .invoice {
+            margin: 0 auto;
+            padding: 0px;
+            width: 80%;
+        }
+        .invoice-header {
+            
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 20px;
+        }
+        .invoice-header h1 {
+            font-size: 24px;
+            text-align:center;
+        }
+        
+        .invoice-info {
+            padding-top: 20px;
+            float: left;
+            width: 50%;
+        }
+        .invoice-details {
+            padding-top: 20px;
+            float: right;
+            width: 50%;
+            text-align: right;
+        }
+        .invoice-bill-to {
+            clear: both;
+            margin-top: 20px;
+        }
+        .invoice-bill-to h2 {
+            font-size: 18px;
+        }
+        .invoice-table {
+            margin-top: 20px;
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .invoice-table th, .invoice-table td {
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        .invoice-total {
+            margin-top: 20px;
+            float: right;
+        }
+        .invoice-total h3 {
+            font-size: 18px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="invoice">
+        <div class="invoice-header">
+            <h1>Invoice</h1>
+            <p style="text-align:center">D-22, Sector-03, Noida, UP</p>
+            <div class="invoice-info">
+                <p>Invoice #: {{data.id}}</p>
+                <p>Date: {{data.date}}</p>
+
+
+            </div>
+            <div class="invoice-details"style="text-align:right">
+                <p>Due Date: {{data.date}}</p>
+                <p>Payment Method: Online</p>
+                
+            </div>
+        </div>
+        <div class="invoice-bill-to">
+            <h2>Bill To:</h2>
+            <p>{{data.user.name}}</p>
+            <p>{{data.user.address}} </p>
+            <p>Email: {{data.user.email}}</p>
+        </div>
+        <table class="invoice-table">
+            <thead>
+                <tr>
+                    <th>Package Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody >
+                <tr style="text-align:center">
+                    <td >{{data.package.name}}</td>
+                    <td>{{data.qty}}</td>
+                    <td>₹{{data.total}}</td>
+                </tr>
+               
+            </tbody>
+        </table>
+        {% comment %} <style>
+            .invoice-total {
+                font-family: Arial, sans-serif;
+                border: 1px solid #ccc;
+                padding: 15px;
+                border-radius: 5px;
+                background-color: #f9f9f9;
+                text-align: center; /* To center-align the text */
+                width:300px;
+            }
+        
+            .invoice-details {
+                text-align: left; /* To left-align the details */
+                margin-top: 0px;
+            }
+        
+            .invoice-details span {
+                display: block;
+                margin-bottom: 5px;
+                font-size:20px;
+                margin-left:-100px;
+            }
+        </style> {% endcomment %}
+        
+        {% comment %} <div class="invoice-total">
+            <h2>Invoice Total</h2>
+            <div class="invoice-details">
+                <span id="price"></span>
+                <span id="convenience-fee"></span>
+                <span id="cgst"></span>
+                <span id="sgst" style="border-bottom:1px solid #bfb9a6"></span>
+                <span id="total" style="font-weight:bold"></span>
+            </div>
+        </div>
+        
+        <script>
+            var x = {{data.total}};
+            var c = {{data.convenience_fee}}*{{data.qty}};
+            var g = c * 18 / 100;
+            var dg=g/2
+            var y = x - c - g;
+        
+            document.getElementById("price").innerHTML = "Price:  ₹" + y.toFixed(2);
+            document.getElementById("convenience-fee").innerHTML = "Convenience Fee ₹:" + c.toFixed(2);
+            document.getElementById("cgst").innerHTML = "CGST ₹:" + dg.toFixed(2);
+            document.getElementById("sgst").innerHTML = "SGST ₹:" + dg.toFixed(2);
+            document.getElementById("total").innerHTML = "Total ₹:" + x.toFixed(2);
+        </script> {% endcomment %}
+        
+
+        <button class="mt-2" onclick="window.print()"> <i class="fa fa-print"></i>
+        </button>
+        
+    </div>
+</body>
+</html>

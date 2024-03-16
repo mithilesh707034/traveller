@@ -8,138 +8,72 @@
 
 <div class="qodef-content" style="margin-top: -80px">
     <div class="qodef-content-inner">
-    <div class="qodef-full-width">
-    <div class="qodef-full-width-inner">
-    <div class="qodef-grid-row">
-    <div class="qodef-page-content-holder qodef-grid-col-12">
-    <section class="wpb-content-wrapper"><div class="vc_row wpb_row vc_row-fluid vc_custom_1539349974147"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="qodef-destinations-slider-full-screen qodef-grid-list qodef-disable-bottom-space qodef-no-space">
-    <div class="qodef-dsfs-inner qodef-owl-slider" data-number-of-items="4" data-enable-loop="yes" data-enable-autoplay="yes" data-slider-speed="5000" data-slider-speed-animation="600" data-slider-animate-in="fadeIn" data-slider-animate-out="fadeOut" data-enable-navigation="no">
-    <div class="qodef-td-item qodef-item-space">
-    <div class="qodef-tdi-content">
-    <div class="qodef-td-item">
-    <a class="qodef-dsfs-link qodef-block-drag-link" href="/details">
-    <div class="qodef-dsfs-image" style="background-image: url({%static 'assets/wp-content/uploads/2018/10/carousel-img-1.jpg'%})"></div>
-    <div class="qodef-tdi-text">
-    <div class="qodef-tdi-text-outer">
-    <div class="qodef-tdi-text-inner">
-    <span class="qodef-tdi-subtitle">
-    Tropical </span>
-    <h2 class="qodef-tdi-title">Exotic Places</h2>
+        <div class="qodef-full-width">
+            <div class="qodef-full-width-inner">
+                <div class="qodef-grid-row">
+                    <div class="qodef-page-content-holder qodef-grid-col-12">
+                        <section class="wpb-content-wrapper">
+                            <div class="vc_row wpb_row vc_row-fluid vc_custom_1539349974147">
+                                <div class="wpb_column vc_column_container vc_col-sm-12">
+                                    <div class="vc_column-inner">
+                                        <div class="wpb_wrapper">
+                                            <div
+                                                class="qodef-destinations-slider-full-screen qodef-grid-list qodef-disable-bottom-space qodef-no-space">
+                                                {%if package%}
+                                                <div class="qodef-dsfs-inner qodef-owl-slider" data-number-of-items="4"
+                                                    data-enable-loop="yes" data-enable-autoplay="yes"
+                                                    data-slider-speed="5000" data-slider-speed-animation="600"
+                                                    data-slider-animate-in="fadeIn" data-slider-animate-out="fadeOut"
+                                                    data-enable-navigation="no">
+                                                    {%for item in package%}
+                                                    <div class="qodef-td-item qodef-item-space">
+                                                        <div class="qodef-tdi-content">
+                                                            <div class="qodef-td-item">
+                                                                <a class="qodef-dsfs-link qodef-block-drag-link"
+                                                                    href="/{{item.name|slugify}}/{{item.id}}">
+                                                                    <div class="qodef-dsfs-image"
+                                                                        style="background-image: url({{item.pic1.url}})">
+                                                                    </div>
+                                                                    <div class="qodef-tdi-text">
+                                                                        <div class="qodef-tdi-text-outer">
+                                                                            <div class="qodef-tdi-text-inner">
+                                                                                
+                                                                                <h5 class="qodef-tdi-title">{{item.name}}</h5>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    {%endfor%}
+                                                </div>
+                                                {%else%}
+                                                <div class="container-fluid"style="height:100px;margin-top:100px;margin-left:30%;">
+                                                 <h2>No Package Available</h2>
+                                                </div>
+                                                {%endif%}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    </div>
-    </div>
-    </a>
-    </div>
-    </div>
-    </div>
-    <div class="qodef-td-item qodef-item-space">
-    <div class="qodef-tdi-content">
-    <div class="qodef-td-item">
-    <a class="qodef-dsfs-link qodef-block-drag-link" href="/details">
-    <div class="qodef-dsfs-image" style="background-image: url({%static 'assets/wp-content/uploads/2018/10/carousel-img-2.jpg'%})"></div>
-    <div class="qodef-tdi-text">
-    <div class="qodef-tdi-text-outer">
-    <div class="qodef-tdi-text-inner">
-    <span class="qodef-tdi-subtitle">
-    Stunning </span>
-    <h2 class="qodef-tdi-title">Far Places</h2>
-    </div>
-    </div>
-    </div>
-    </a>
-    </div>
-    </div>
-    </div>
-    <div class="qodef-td-item qodef-item-space">
-    <div class="qodef-tdi-content">
-    <div class="qodef-td-item">
-    <a class="qodef-dsfs-link qodef-block-drag-link" href="/details">
-    <div class="qodef-dsfs-image" style="background-image: url({%static 'assets/wp-content/uploads/2018/10/carousel-img-3.jpg'%})"></div>
-    <div class="qodef-tdi-text">
-    <div class="qodef-tdi-text-outer">
-    <div class="qodef-tdi-text-inner">
-    <span class="qodef-tdi-subtitle">
-    Relaxing </span>
-    <h2 class="qodef-tdi-title">Holiday</h2>
-    </div>
-    </div>
-    </div>
-    </a>
-    </div>
-    </div>
-    </div>
-    <div class="qodef-td-item qodef-item-space">
-    <div class="qodef-tdi-content">
-    <div class="qodef-td-item">
-    <a class="qodef-dsfs-link qodef-block-drag-link" href="/details">
-    <div class="qodef-dsfs-image" style="background-image: url({%static 'assets/wp-content/uploads/2018/10/carousel-img-4.jpg'%})"></div>
-    <div class="qodef-tdi-text">
-    <div class="qodef-tdi-text-outer">
-    <div class="qodef-tdi-text-inner">
-    <span class="qodef-tdi-subtitle">
-    Romantic </span>
-    <h2 class="qodef-tdi-title">Wine Tour</h2>
-    </div>
-    </div>
-    </div>
-    </a>
-    </div>
-    </div>
-    </div>
-    <div class="qodef-td-item qodef-item-space">
-    <div class="qodef-tdi-content">
-    <div class="qodef-td-item">
-    <a class="qodef-dsfs-link qodef-block-drag-link" href="/details">
-    <div class="qodef-dsfs-image" style="background-image: url({%static 'assets/wp-content/uploads/2018/10/carousel-img-5.jpg'%})"></div>
-    <div class="qodef-tdi-text">
-    <div class="qodef-tdi-text-outer">
-    <div class="qodef-tdi-text-inner">
-    <span class="qodef-tdi-subtitle">
-    Relaxing </span>
-    <h2 class="qodef-tdi-title">Country Side</h2>
-    </div>
-    </div>
-    </div>
-    </a>
-    </div>
-    </div>
-    </div>
-    <div class="qodef-td-item qodef-item-space">
-    <div class="qodef-tdi-content">
-    <div class="qodef-td-item">
-    <a class="qodef-dsfs-link qodef-block-drag-link" href="/details">
-    <div class="qodef-dsfs-image" style="background-image: url({%static 'assets/wp-content/uploads/2018/10/carousel-img-6.jpg'%})"></div>
-    <div class="qodef-tdi-text">
-    <div class="qodef-tdi-text-outer">
-    <div class="qodef-tdi-text-inner">
-    <span class="qodef-tdi-subtitle">
-    Active </span>
-    <h2 class="qodef-tdi-title">Hiking</h2>
-    </div>
-    </div>
-    </div>
-    </a>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div></div></div></div></div>
-    </section> </div>
-    </div>
-    </div>
-    </div>
-    </div> 
-    </div> 
-    </div> 
-    </div> 
-    <script>
-                window.RS_MODULES = window.RS_MODULES || {};
-                window.RS_MODULES.modules = window.RS_MODULES.modules || {};
-                window.RS_MODULES.waiting = window.RS_MODULES.waiting || [];
-                window.RS_MODULES.defered = false;
-                window.RS_MODULES.moduleWaiting = window.RS_MODULES.moduleWaiting || {};
-                window.RS_MODULES.type = 'compiled';
-            </script>
+</div>
+</div>
+</div>
+<script>
+    window.RS_MODULES = window.RS_MODULES || {};
+    window.RS_MODULES.modules = window.RS_MODULES.modules || {};
+    window.RS_MODULES.waiting = window.RS_MODULES.waiting || [];
+    window.RS_MODULES.defered = false;
+    window.RS_MODULES.moduleWaiting = window.RS_MODULES.moduleWaiting || {};
+    window.RS_MODULES.type = 'compiled';
+</script>
 
 {%endblock%}
-

@@ -1,0 +1,32 @@
+{% extends "home.html" %}
+{%block body%}
+
+<div class="container-fluid w-50 ">
+    <div >
+        <form method="post" class="form-control">
+           {%csrf_token%}
+            <div>
+               <h6>Name</h6>
+               <input type="text" name="name" placeholder="Your Name" value="{{data.name}}" class="form-control">
+            </div>
+            <div>
+               <h6>Phone</h6>
+               <input type="number" name="phone"min="5000000000"max="9999999999"value="{{data.phone}}" placeholder="Your Phone" required class="form-control">
+            </div>
+            
+            <div>
+                <h6>Address</h6>
+                <input type="text" name="address" placeholder="Your Address" value="{{data.address}}" class="form-control">
+             </div>
+            <div class="mt-4">
+                <ul>
+                    <li>
+                        <button type="submit" class="btn btn-primary">Update </button>
+                    </li> 
+                   
+                </ul>
+            </div>
+        </form>
+    </div>
+</div>
+{%endblock%}
